@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="game">
+        <h1>🐍 Snake Game</h1>
+        <p class="subtitle">Makan, tumbuh, dan pecahkan rekor!</p>
+
+        <div class="info">
+            <p>Skor <span id="skor">0</span></p>
+            <p>Rekor <span id="rekor">0</span></p>
+            <p>Level <span id="level">1</span></p>
+        </div>
+
+        <div id="areaPapan">
+            <div id="papan"></div>
+
+            <div id="overlay">
+                <h2 id="judulOverlay">Siap Bermain?</h2>
+                <p id="pesanOverlay">Tekan Mulai Game untuk bermain.</p>
+            </div>
+        </div>
+
+        <div class="aksi">
+            <button id="tombolMulai">Mulai Game</button>
+            <button id="tombolJeda" disabled>Jeda</button>
+        </div>
+
+        <p class="petunjuk">Gunakan tombol panah keyboard atau tombol arah di bawah.</p>
+
+        <div id="kontrol" aria-label="Kontrol arah ular">
+            <button class="arah" data-arah="atas" aria-label="Atas">▲</button>
+            <div class="barisKontrol">
+                <button class="arah" data-arah="kiri" aria-label="Kiri">◀</button>
+                <button class="arah" data-arah="bawah" aria-label="Bawah">▼</button>
+                <button class="arah" data-arah="kanan" aria-label="Kanan">▶</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

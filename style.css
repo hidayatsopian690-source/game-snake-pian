@@ -1,0 +1,301 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 25px 12px;
+    background: linear-gradient(135deg, #101820, #182b35);
+    color: #f1f5f9;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.game {
+    width: 100%;
+    max-width: 460px;
+    margin: auto;
+}
+
+h1 {
+    margin-bottom: 8px;
+    color: #5cff9d;
+    font-size: 36px;
+}
+
+.subtitle {
+    color: #b6c7cf;
+    margin-bottom: 22px;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.info p {
+    margin: 0;
+    padding: 10px 14px;
+    background: #243943;
+    border-radius: 9px;
+    font-size: 14px;
+}
+
+.info span {
+    display: block;
+    margin-top: 5px;
+    color: #5cff9d;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#areaPapan {
+    position: relative;
+    width: min(400px, 90vw);
+    margin: 20px auto;
+    aspect-ratio: 1 / 1;
+}
+
+#papan {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    background: #0c171d;
+    border: 3px solid #5cff9d;
+    border-radius: 8px;
+    box-shadow: 0 0 25px #5cff9d20;
+    overflow: hidden;
+}
+
+.kotak {
+    border: 1px solid #ffffff08;
+}
+
+.ular {
+    background: #5cff9d;
+    border: 1px solid #22c55e;
+    border-radius: 3px;
+}
+
+.makanan {
+    background: #ff5364;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #ff536499;
+}
+
+#overlay {
+    position: absolute;
+    inset: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #101820dd;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+#overlay.sembunyi {
+    display: none;
+}
+
+#overlay h2 {
+    color: #5cff9d;
+    font-size: 26px;
+    margin: 0 0 10px;
+}
+
+#overlay p {
+    line-height: 1.5;
+    color: #e2e8f0;
+}
+
+.aksi {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #5cff9d;
+    color: #10251b;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background: #35e982;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#tombolJeda {
+    background: #facc15;
+}
+
+.petunjuk {
+    margin: 20px 0 12px;
+    color: #b6c7cf;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#kontrol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    margin-top: 15px;
+}
+
+.barisKontrol {
+    display: flex;
+    gap: 7px;
+}
+
+.arah {
+    width: 58px;
+    height: 48px;
+    padding: 0;
+    font-size: 22px;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+@media (max-width: 450px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .info p {
+        padding: 9px 11px;
+    }
+}
+
+/* ===== MODE MOBILE ===== */
+
+@media (max-width: 600px) {
+    body {
+        padding: 18px 10px;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow-x: hidden;
+    }
+
+    .game {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 29px;
+        margin-top: 8px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        margin-bottom: 18px;
+    }
+
+    .info {
+        gap: 6px;
+        flex-wrap: nowrap;
+    }
+
+    .info p {
+        flex: 1;
+        min-width: 0;
+        padding: 9px 5px;
+        font-size: 12px;
+    }
+
+    .info span {
+        font-size: 18px;
+    }
+
+    #areaPapan {
+        width: min(100%, 400px);
+        margin: 16px auto;
+    }
+
+    #papan {
+        border-width: 2px;
+    }
+
+    .aksi {
+        gap: 8px;
+    }
+
+    .aksi button {
+        flex: 1;
+        min-height: 48px;
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+
+    .petunjuk {
+        font-size: 12px;
+        margin: 15px 0;
+    }
+
+    #kontrol {
+        gap: 8px;
+        margin-top: 18px;
+    }
+
+    .barisKontrol {
+        gap: 8px;
+    }
+
+    .arah {
+        width: 66px;
+        height: 56px;
+        font-size: 24px;
+        border-radius: 12px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .arah:active {
+        transform: scale(0.94);
+        background: #35e982;
+    }
+}
+
+/* HP dengan layar sangat kecil */
+@media (max-width: 350px) {
+    h1 {
+        font-size: 25px;
+    }
+
+    .info p {
+        font-size: 11px;
+    }
+
+    .info span {
+        font-size: 16px;
+    }
+
+    .arah {
+        width: 56px;
+        height: 50px;
+    }
+}
